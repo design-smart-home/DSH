@@ -1,4 +1,4 @@
-FROM python:3.11.9-slim
+FROM python:3.12
 
 COPY pyproject.toml pyproject.toml
 RUN pip install poetry
