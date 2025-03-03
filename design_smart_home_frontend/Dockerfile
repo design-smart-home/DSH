@@ -1,7 +1,5 @@
 FROM node:alpine as build
 
-WORKDIR /design_smart_home_frontend
-
 COPY package.json package.json
 RUN npm install
 
