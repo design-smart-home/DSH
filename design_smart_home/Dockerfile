@@ -1,9 +1,13 @@
 FROM python:3.12
 
-COPY pyproject.toml poetry.lock ./
+WORKDIR /design_smart_home
+
 RUN pip install --upgrade pip && pip install poetry==2.0.1
+COPY pyproject.toml poetry.lock ./
 RUN poetry install --no-root
 
 COPY . .
 
-CMD [ "poetry", "run", "python", "main.py" ]
+ENV PYTHONPATH="${PYTHONPATH}:/design_smart_home/app"
+
+CMD [ "poetry", "run", "python", "app/main.py" ]

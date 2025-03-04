@@ -17,6 +17,7 @@ services:
   backend:
     build:
       context: ./design_smart_home
+      dockerfile: Dockerfile
     networks:
       - dev
 
