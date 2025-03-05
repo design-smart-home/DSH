@@ -21,6 +21,13 @@ services:
     networks:
       - dev
 
+  db_online:
+    build:
+      context: ./DSH_db_online
+      dockerfile: Dockerfile
+    networks:
+      - dev
+
   frontend:
     build:
       context: ./design_smart_home_frontend
