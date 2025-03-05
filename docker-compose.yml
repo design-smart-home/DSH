@@ -11,6 +11,7 @@ services:
     depends_on:
       - backend
       - frontend
+      - db_online
     networks:
       - dev
 
