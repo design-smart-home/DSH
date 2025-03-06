@@ -14,7 +14,7 @@ from httpx import Response
 
 device_router = APIRouter()
 
-base_url = "http://127.0.0.1:8001"
+base_url = "http://db_online:8001"
 device_api = DeviceAPI(base_url)
 
 
