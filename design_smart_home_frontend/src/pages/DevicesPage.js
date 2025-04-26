@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from '../components/Card';
 import Modal from '../components/Modal';
+import { Button } from 'antd';
 
 const DevicesPage = () => {
   const [devices, setDevices] = useState([]);
@@ -34,7 +35,7 @@ const DevicesPage = () => {
   // Добавление нового устройства
   const addDevice = () => {
     //axios.post('http://31.128.49.209/api/devices', 
-    axios.post('http://31.128.49.209/api/devices', {
+    axios.post('http://127.0.0.1:8000/devices/', {
       name: name,          // Название устройства
       data_type: dataType, // Тип данных устройства
       range_value: [],     // Пустой список
@@ -71,7 +72,7 @@ const DevicesPage = () => {
     <div className="devices-page">
       <div className="content">
         <h2>Устройства</h2>
-        <button onClick={openModal}>Добавить устройство</button> {/* Кнопка для открытия модального окна */}
+        <Button type='primary' onClick={openModal}>Добавить устройство</Button> {/* Кнопка для открытия модального окна */}
 
         {devices.length === 0 ? (
           <p>Устройства отсутствуют. Добавьте новое устройство.</p>
