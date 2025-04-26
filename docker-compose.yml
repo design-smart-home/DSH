@@ -10,7 +10,7 @@ services:
       - "./nginx.conf:/etc/nginx/nginx.conf"
     depends_on:
       - backend
-      - fr
+      - frontend
       - db_online
     networks:
       - dev
