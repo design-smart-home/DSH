@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["topov <temagroz-2@yandex.ru>"]
 packages = [{ include = "app" }]
-package-mode = false
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"

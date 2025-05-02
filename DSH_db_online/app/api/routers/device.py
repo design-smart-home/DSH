@@ -9,7 +9,7 @@ from app.api.schemas.device import (
 )
 from app.api.core.device import (
     delete_device_by_name,    get_device_by_id,
-    post_device_,
+    post_device_, get_all_devices_by_user_id_
 )
 
 import uuid
@@ -67,3 +67,10 @@ def delete_device(
         )
 
     return Response(status_code=200)
+
+
+@device_router.get("/all_devices/{user_id}")
+def get_all_devices_by_user_id(user_id: uuid.UUID, db: Session = Depends(get_db)):
+    devices = get_all_devices_by_user_id_(user_id, db)
+
+    return devices

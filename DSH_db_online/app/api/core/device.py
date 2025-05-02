@@ -20,6 +20,7 @@ def post_device_(data: PostDeviceRequest, session: Session) -> Device | None:
     device_repo = DeviceRepository(session)
 
     device = device_repo.post_device(
+        user_id=data.user_id,
         name=data.name,
         data_type=data.data_type,
         range_value=data.range_value,
@@ -39,3 +40,11 @@ def delete_device_by_name(
 
     if device:
         return device
+
+
+def get_all_devices_by_user_id_(user_id: uuid.UUID, session: Session) -> list[Type[Device]] | None:
+    device_repo = DeviceRepository(session)
+
+    devices = device_repo.get_all_devices_by_user_id(user_id)
+
+    return devices

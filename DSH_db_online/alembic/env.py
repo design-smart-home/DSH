@@ -20,6 +20,8 @@ if config.config_file_name is not None:
 # target_metadata = mymodel.Base.metadata
 from app.db.base import Base
 from app.db.models.device import Device
+from app.db.models.widget import Widget
+from app.db.models.dashboard import Dashboard
 target_metadata = Base.metadata
 
 # other values from the config, defined by the needs of env.py,

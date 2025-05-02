@@ -14,7 +14,7 @@ from httpx import Response
 
 user_router = APIRouter()
 
-base_url = "http://127.0.0.1:8002"
+base_url = "http://db_users:8002"
 user_api = UserAPI(base_url)
 
 

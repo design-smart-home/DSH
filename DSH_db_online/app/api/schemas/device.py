@@ -11,6 +11,7 @@ class GetDeviceResponse(BaseModel):
 
 
 class PostDeviceRequest(BaseModel):
+    user_id: uuid.UUID
     name: str
     data_type: str
     range_value: list[int, int] | list[float, float]

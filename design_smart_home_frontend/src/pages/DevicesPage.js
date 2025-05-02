@@ -35,7 +35,7 @@ const DevicesPage = () => {
   // Добавление нового устройства
   const addDevice = () => {
     //axios.post('http://31.128.49.209/api/devices', 
-    axios.post('http://127.0.0.1:8000/devices/', {
+    axios.post('http://127.0.0.1:80/api/devices/', {
       name: name,          // Название устройства
       data_type: dataType, // Тип данных устройства
       range_value: [],     // Пустой список

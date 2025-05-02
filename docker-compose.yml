@@ -12,6 +12,7 @@ services:
       - backend
       - frontend
       - db_online
+      - db_users
     networks:
       - dev
 
@@ -30,6 +31,28 @@ services:
       - dev
     depends_on:
       - db_devices
+
+  db_users:
+    build:
+      context: ./DSH_db_users
+      dockerfile: Dockerfile
+    networks:
+      - dev
+    depends_on:
+      - db_usrs
+
+  db_usrs:
+    container_name: "dsh_db_users"
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=dsh_db_users
+    ports:
+      - "5433:5432"
+    networks:
+      - dev
 
   db_devices:
     container_name: "dsh_db_devices"
